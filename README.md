@@ -24,7 +24,12 @@ OR
 This may take a few minutes. Wait for completion.
 
 ### Step 3
+delete install files:
+.env.install
+.env.install.dist
+in docker-compose.yaml delete section symfony-install:
 Profit
+
 
 ## Use
 
