@@ -31,6 +31,22 @@ in docker-compose.yaml delete section symfony-install:
 Profit
 
 
+#домашне_завдання 13
+1) Встановити Сімфоні з репозиторію https://github.com/UFO-CMS/symfony-docker-installer і підмінити репозиторій на репозиторій вашого проєкту
+1. git clone git@github.com:UFO-CMS/symfony-docker-installer.git
+2. git remote set-url origin git@github.com:{ВАШЕ_ІМʼЯ}/{ВАШ_РЕПОЗИТОРІЙ}.git
+3. виконати дії з README
+
+перед початком роботи виконайте 
+1. docker compose up -build
+
+1. docker exec -i -t "php_web_code" /bin/bash
+2. composer install
+3. php bin/doctrine orm:schema-tool:update --force
+
+php bin/console make:migration
+php bin/console doctrine:migrations:migrate
+
 ## Use
 
 For use 

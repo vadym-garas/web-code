@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Помилка {% endblock %}
+
+{% block body %}
+    {{ error.code}} <br>
+    {{ error.message}} <br>
+    {{ error.file}} <br>
+    line: {{ error.line}}
+{#    {{ error.code}} {{ error.message}} {{ error.file}}:  {{ error.line}}#}
+
+{% endblock %}

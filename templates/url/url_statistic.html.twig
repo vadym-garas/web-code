@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Satistic counter for code redirect {{ code }} {% endblock %}
+
+{% block body %}
+
+     <section>
+          <a href="{{ links.new_url }}">Add new short</a>
+     </section>
+     <section>
+          <ul>
+               <li>Url Id: {{ url_info.id }}</li>
+               <li>short code: {{ url_info.code }}</li>
+               <li>Url: {{ url_info.url }}</li>
+               <li>Counter: {{ url_info.counter }}</li>
+               <li>Time createId: {{ created_at }}</li>
+               <li>Time update: {{ updated_at }}</li>
+{#               <li>Id: {{ url_info.createdat }}</li>#}
+{#               <li>Id: {{ url_info.updatedat }}</li>#}
+          </ul>
+     </section>
+
+     <iframe src="{{ url_info.url }}" frameborder="0"></iframe>
+
+{% endblock %}
