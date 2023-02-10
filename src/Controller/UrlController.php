@@ -40,7 +40,7 @@ class UrlController extends AbstractController
         return new Response($code);
     }
 
-    #[Route('/{code}', requirements: ['code' => '\w{6}'], methods: ['GET'])]
+    #[Route('/code/{code}', requirements: ['code' => '\w{6}'], methods: ['GET'])]
     public function redirectAction(string $code): Response
     {
         try {
@@ -52,7 +52,7 @@ class UrlController extends AbstractController
         return $response;
     }
 
-    #[Route('/{code}/stat', name: 'url_stats', requirements: ['code' => '\w{6}'], methods: ['GET'])]
+    #[Route('/code/{code}/stat', name: 'url_stats', requirements: ['code' => '\w{6}'], methods: ['GET'])]
     public function redirectStatisticAction(string $code): Response
     {
         $vars = [
@@ -92,7 +92,7 @@ class UrlController extends AbstractController
         return $this->render($template, $vars);
     }
 
-    #[Route('/stats', name: 'all_url_stats', requirements: ['code' => '\w{6}'], methods: ['get'])]
+    #[Route('/code/stats', name: 'all_url_stats', requirements: ['code' => '\w{6}'], methods: ['get'])]
     public function allUrlsStatisticAction(): Response
     {
         $vars = [
@@ -116,7 +116,7 @@ class UrlController extends AbstractController
         return $this->render($template, $vars);
     }
 
-    #[Route('/new', name: 'add_new_url', methods: ['get'])]
+    #[Route('/code/new', name: 'add_new_url', methods: ['get'])]
     public function newAction(Request $request): Response
     {
         $template = 'url/url_new.html.twig';
